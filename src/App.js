@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import { Container } from 'react-bootstrap';
+import Home from "./components/pages/Home";
+import Header from "./components/views/Header/Header";
+import TableEdit from "./components/features/TableEdit/TableEdit";
+import NotFound from "./components/views/NotFound/NotFound";
+import Footer from "./components/views/Footer/Footer";
+import { useDispatch } from "react-redux";
+import { fetchBooks } from "./Redux/tablesRedux";
 function App() {
+
+  const dispatch = useDispatch();
+  useEffect(() => dispatch(fetchBooks()), [dispatch])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path="/tables/:id" element={<TableEdit />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </Container>
   );
 }
 
