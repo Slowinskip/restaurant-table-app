@@ -1,4 +1,5 @@
 import shortid from 'shortid';
+import { API_URL } from '../config';
 
 
 //selectors
@@ -36,7 +37,7 @@ export const editTableRequest = (editTable) => {
       body: JSON.stringify(editTable),
     };
 
-    fetch('http://localhost:3131/api/tables/' + updateTables.id, options)
+    fetch(API_URL + '/tables/' + editTable.id, options)
     .then(() => dispatch(editTables(editTable)))
   }
 };
@@ -51,7 +52,7 @@ export const addTableRequest = newTable => {
       body: JSON.stringify(newTable)
     };
 
-    fetch('http://localhost:3131/api/tables/', options)
+    fetch(API_URL + '/tables/', options)
       .then(() => dispatch(addTables(newTable)))
       .then (() => fetchTables());
     }
@@ -65,7 +66,7 @@ export const deleteTableRequest = (tableId) => {
       },      
     };
 
-    fetch('http://localhost:3131/api/tables/' + tableId, options)
+    fetch(API_URL + '/tables/' + tableId, options)
       .then(() => dispatch(removeTable(tableId)))    
 
   }
