@@ -12,21 +12,25 @@ const TableEdit = () => {
     let navigate = useNavigate();
     const dispatch = useDispatch();
     console.log(tableData);
+
     const handleSubmit = (table) => {
         dispatch(editTableRequest({ ...table }));
         navigate('/');
+        console.log(table);
     }
 
     if(!tableData) return <Navigate to="/" />
     else return (
         <TablesForm 
             action={handleSubmit}
-            status={tableData.status}
+            actionText="Update"
             id={tableData.id}
-            peopleAmount={tableData.peopleAmount}
-            maxPeopleAmount={tableData.maxPeopleAmount}
+            status={tableData.status}
+            people={tableData.people}
+            maxPeople={tableData.maxPeople}
             bill={tableData.bill}
-            actionText={"Update"}
+            numer={tableData.numer}
+            title={'Table ' + tableData.id}
         />
     )
 }

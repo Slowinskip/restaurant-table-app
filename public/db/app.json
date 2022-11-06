@@ -1,32 +1,44 @@
 {
   "tables": [
     {
-      "id": "1",
-      "peopleAmount": "2",
-      "maxPeopleAmount": "4",
-      "bill": "20",
-      "status": "Reserved"
-    },
-    {
       "id": "2",
       "status": "Free",
-      "peopleAmount": 0,
-      "maxPeopleAmount": 3,
-      "bill": 0
+      "people": 0,
+      "maxPeople": 3,
+      "bill": 0,
+      "numer": "2"
     },
     {
       "id": "3",
       "status": "Busy",
-      "peopleAmount": 2,
-      "maxPeopleAmount": 3,
-      "bill": 45
+      "people": 2,
+      "maxPeople": 3,
+      "bill": "8",
+      "numer": "3"
     },
     {
       "id": "4",
       "status": "Cleaning",
-      "peopleAmount": 0,
-      "maxPeopleAmount": 3,
-      "bill": 0
+      "people": 0,
+      "maxPeople": 3,
+      "bill": 0,
+      "numer": "4"
+    },
+    {
+      "people": "1",
+      "maxPeople": "2",
+      "bill": "2",
+      "status": "Busy",
+      "numer": "1",
+      "id": "OVtP-aY"
+    },
+    {
+      "people": "6",
+      "maxPeople": 10,
+      "bill": "1",
+      "status": "Reserved",
+      "numer": "5",
+      "id": "r_nGyCD"
     }
   ],
   "status": [
